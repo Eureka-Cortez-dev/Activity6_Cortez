@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CORTEZ'S CREATIVES</title>
+        <style>
+
+            *{
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            body{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background-color: rgb(255, 202, 202);
+                color: rgb(255, 255, 255);
+                min-height: 100vh;
+                display: flex;
+                flex-direction:column;
+            }
+
+            header {
+                background-color: #faabab;
+                color: #ffffff;
+                padding: 15px 20px;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+            }
+
+            .brand-title {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 1.25rem;
+                font-weight: 700;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+            }
+
+
+            .brand-logo {
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                border: 2px solid #faf8f8;
+                object-fit: cover;
+            }
+
+
+
+
+            nav {
+                background-color: #f77b7b;
+                width: 100%;
+                padding: 10px 0;
+            }
+
+
+            nav ul {
+                list-style: none;
+                display: flex;
+                justify-content: center;
+                gap: 30px;
+            }
+
+
+            nav a {
+                color: #ffffff;
+                text-decoration: none;
+                font-size: 0.85rem;
+                font-weight: 600;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                padding: 5px 10px;
+                border-radius: 4px;
+                transition: background-color 0.2s ease, color 0.2s ease;
+            }
+
+
+            nav a:hover,
+            nav a.active {
+                background-color: rgba(253, 253, 253, 0.15);
+                color: #0e0e0e;
+            }
+
+
+            main {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 40px 20px;
+            }
+
+
+            .card {
+                background-color: #bd9b9b;
+                width: 100%;
+                max-width: 750px;
+                border-radius: 12px;
+                padding: 40px 30px;
+                box-shadow: 0 10px 25px rgba(136, 89, 89, 0.1);
+                text-align: center;
+            }
+
+
+
+            .view-section {
+                display: none;
+                animation: fadeIn 0.3s ease-in-out forwards;
+            }
+
+
+            .view-section.active {
+                display: block;
+            }
+
+
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(5px); }
+                to { opacity: 1; transform: translateY(0); }
+             }
+
+
+
+
+            .card h1 {
+                    font-size: 1.6rem;
+                    font-weight: 800;
+                    color: #fdfdfd;
+                    margin-bottom: 8px;
+                    letter-spacing: 0.5px;
+                    text-transform: uppercase;
+            }
+
+
+            .tagline {
+                font-size: 0.95rem;
+                font-style: italic;
+                color: #fcfbfb;
+                margin-bottom: 25px;
+            }
+
+
+
+
+            .image-group {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                margin-bottom: 25px;
+             }
+
+
+
+
+            .circular-img {
+                width: 90px;
+                height: 90px;
+                border-radius: 50%;
+                border: 3px solid #fcfafa;
+                object-fit: cover;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            }
+
+
+
+
+            .single-img {
+                width: 110px;
+                height: 110px;
+                border-radius: 50%;
+                border: 3px solid #fdfdfc;
+                object-fit: cover;
+                margin: 0 auto 20px auto;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            }
+
+
+            .description {
+                font-size: 0.85rem;
+                line-height: 1.6;
+                color: #fcfbfb;
+                max-width: 620px;
+                margin: 0 auto 25px auto;
+            }
+
+
+            .description p {
+                margin-bottom: 12px;
+                }
+
+
+
+
+            .btn {
+                display: inline-block;
+                background-color: #fcaaaa;
+                color: #000000;
+                padding: 10px 24px;
+                border-radius: 20px;
+                font-size: 0.8rem;
+                font-weight: 700;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                text-decoration: none;
+                border: none;
+                cursor: pointer;
+                transition: background-color 0.2s ease, transform 0.1s ease;
+                }
+
+
+            .btn:hover {
+                background-color: #f7f4f4;
+                transform: translateY(-1px);
+                }
+
+
+            .gallery-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+                gap: 15px;
+                margin-bottom: 20px;
+                }
+
+
+            .gallery-grid img {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                border: 3px solid #ffffff;
+                object-fit: cover;
+                margin: 0 auto;
+                }
+
+
+            footer {
+                background-color: #fc9b9b;
+                color: #fcf9f9;
+                text-align: center;
+                padding: 15px 20px;
+                font-size: 0.75rem;
+                }
+                </style>
+                </head>
+                <body>
+
+
+
+
+                <header>
+                <div class="brand-title">
+                <img src="1.png" alt="Logo" class="brand-logo">
+                <span>CORTEZ</span>
+                </div>
+                <nav>
+                <ul>
+                <li><a href="#home" class="nav-link active" onclick="switchTab(event, 'home')">HOME</a></li>
+                <li><a href="#about" class="nav-link" onclick="switchTab(event, 'about')">ABOUT</a></li>
+                <li><a href="#gallery" class="nav-link" onclick="switchTab(event, 'gallery')">GALLERY</a></li>
+                <li><a href="#contact" class="nav-link" onclick="switchTab(event, 'contact')">CONTACT</a></li>
+                </ul>
+                </nav>
+                </header>
+
+
+
+
+                <main>
+                <div class="card">
+
+
+
+
+                <section id="home" class="view-section active">
+                <h1>EXPERIENCE THE CREATIVE</h1>
+
+
+
+
+
+
+                <div class="image-group">
+                <img src="2.jpg" class="circular-img">
+                <img src="3.jpeg" alt="Creator Profile" class="circular-img">
+                <img src="4.jpg" alt="Creator Profile" class="circular-img">
+                </div>
+
+
+                <div class="description">
+                <p>Cortez's Creative Studio, we turn ideas into captivating visual experiences. Our team of passionate designers and artists is committed to bringing your vision to life through creativity, innovation, and meticulous attention to detail. Every project we create reflects our dedication to excellence and our passion for meaningful, standout design.</p>
+                </div>
+
+
+                <button class="btn" onclick="switchTab(null, 'about')">LEARN MORE</button>
+                </section>
+
+
+
+
+                <section id="about" class="view-section">
+                <img src="1.png" alt="About Image" class="single-img">
+                <h1>About the Collection</h1>
+
+
+                <div class="description">
+                <p>Cortez’s Creative Studio is passionate about turning ideas into captivating visual experiences. Our talented team of designers and artists works closely to transform your vision into reality, combining creativity, innovation, and attention to detail. Every project reflects our dedication to quality, originality, and creative excellence.
+                </p></p>
+                </div>
+
+
+                
+                </section>
+
+
+                <!-- GALLERY PAGE -->
+                <section id="gallery" class="view-section">
+                <h1>Our Showcase</h1>
+                <p class="tagline">Explore our curated works and creations.</p>
+
+
+                <div class="gallery-grid">
+                <img src="2.jpg" alt="Creative Work 1">
+                <img src="3.jpeg" alt="Creative Work 2">
+                <img src="4.jpg" alt="Creative Work 3">
+                </div>
+
+
+                <button class="btn" onclick="switchTab(null, 'home')">BACK TO HOME</button>
+                </section>
+
+
+
+
+                <section id="contact" class="view-section">
+                <h1>Contact Us</h1>
+                <p class="tagline">We would like to connect with you.</p>
+
+
+                <div class="description">
+                <p>Email: <strong>20265055@gmail.com</strong></p>
+                <p>Location: Baguio City, Philippines</p>
+                <p>Follow us on social media</p>
+                </div>
+
+
+                <button class="btn" onclick="switchTab(null, 'home')">RETURN HOME</button>
+                </section>
+
+
+                </div>
+                </main>
+
+
+
+
+                <footer>
+                <p>2026 CORTEZ Creatives</p>
+                </footer>
+
+
+
+
+                <script>
+                function switchTab(event, targetId) {
+                if (event) event.preventDefault();
+
+
+
+
+                const sections = document.querySelectorAll('.view-section');
+                sections.forEach(section => section.classList.remove('active'));
+
+
+
+
+                const navLinks = document.querySelectorAll('.nav-link');
+                navLinks.forEach(link => link.classList.remove('active'));
+
+
+
+
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                targetSection.classList.add('active');
+                }
+
+
+                navLinks.forEach(link => {
+                if (link.getAttribute('href') === '#' + targetId) {
+                link.classList.add('active');
+                }
+                });
+                }
+                </script>
+                </body>
+                </html>
+
